@@ -1,0 +1,43 @@
+{% extends 'customertemp/Customer_home.html'%}
+{% load crispy_forms_tags %}
+{%  block content %}        <! block content used for >
+<div class="card" style="width: 60rem;">
+  <div class="card-body">
+    <h5 class="card-title"></h5>
+        <table class ='table'>
+            <thead>
+            <tr>
+                <th scope="col">sl No</th>
+                <th>Worker</th>
+                <th>Start Time</th>
+                <th>End Time</th>
+                <th>Date</th>
+
+            </tr>
+            </thead>
+            <tbody>
+            {% for i in obj %}
+            <tr>
+                <th scope="row">{{forloop.counter}}</th>
+                <th>{{i.user}}</th>
+                <td>{{i.start_time}}</td>
+                <td>{{i.end_time}}</td>
+                <td>{{i.date}}</td>
+
+                 <td><a href="{% url 'take_appointment' i.id %}"  class="btn btn-success" tabindex="-1" role="button" aria-disabled="true">Book</a></td>
+<!--                <td><button onclick="myFunction"   class="btn btn-success">Book</button></td>-->
+
+            </tr>
+
+            {% endfor %}
+
+
+            </tbody>
+        </table>
+
+
+
+
+  </div>
+</div>
+{% endblock %}

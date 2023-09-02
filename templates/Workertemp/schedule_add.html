@@ -1,0 +1,17 @@
+{% extends 'workertemp/Worker_home.html'%}
+{% load crispy_forms_tags %}
+{%  block content %}
+<div class="card" style="width: 40rem;">
+  <div class="card-body">
+    <h5 class="card-title">Worker Schedule</h5>
+    <form method="post">
+     {% csrf_token %}
+      {{form|crispy}}
+<!--    <button type="submit" class="btn btn-primary">Submit</button>-->
+        <a href="{% url 'Worker_schedule_view'%}" class="btn btn-primary" tabindex="-1" role="button" aria-disabled="true">Submit</a></td>
+    </form>
+
+
+  </div>
+</div>
+{% endblock %}

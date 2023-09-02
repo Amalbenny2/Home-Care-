@@ -1,0 +1,45 @@
+{% extends 'customertemp/Customer_home.html' %}
+
+{% block content %}
+
+<div class="col-lg-8 col-ml-8">
+    <div class="row">
+        <!-- basic form start -->
+        <div class="col-12 mt-5">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="header-title">Take Appointment</h4>
+                    <form method="post" enctype="multipart/form-data">{% csrf_token %}
+
+                        <div class="form-group">
+                            <label class="form-control-label">Start Time</label>
+                            <input required class="form-control"readonly value="{{schedule.date}}">
+                        </div>
+
+                         <div class="form-group">
+                            <label class="form-control-label">Start Time</label>
+                            <input required class="form-control"readonly value="{{schedule.start_time}}">
+                        </div>
+
+                         <div class="form-group">
+                            <label class="form-control-label">Start Time</label>
+                            <input required class="form-control"readonly value="{{schedule.end_time}}">
+                        </div>
+
+
+                        <button type="submit" class="btn btn-primary mt-4 pr-4 pl-4">Submit</button>
+                    </form>
+
+                    {% for message in messages %}
+                    <div class="alert alert-info" role="alert">
+                        <strong>{{message}}</strong>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+{% endblock %}

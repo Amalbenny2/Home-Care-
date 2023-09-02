@@ -1,0 +1,24 @@
+{% extends 'customertemp/Customer_home.html'%}
+{% load crispy_forms_tags %}
+{%  block content %}
+<div class="card" style="width: 20rem;">
+<!--    <fieldset>-->
+<!--         <label<img src="{{i.image.url}}" alt="IMAGE" width="200"height="150">-->
+<!--        <label for="name"> name:</label><br><br>-->
+<!--        <label for="password">password:</label><br><br>-->
+<!--        <label for="address">Address:</label><br><br>-->
+<!--        <label for="location">Location:</label><br><br>-->
+<!--    </fieldset>-->
+    {% for i in data %}
+<!--  <img src="..." class="card-img-top" alt="...">-->
+  <div class="card-body">
+    <h5 class="card-title"></h5>
+    <h5><label for="html">Name: {{i.name }}</label></h5>
+    <h5> <label for="html">Phone_Number: {{i.phone_number }}</label></h5>
+    <h5> <label for="html">Address: {{i.address }}</label></h5>
+    <h5> <label for="html">Location:{{ i.location }}</label> </h5>
+
+  </div>
+    {% endfor %}
+</div>
+{% endblock %}

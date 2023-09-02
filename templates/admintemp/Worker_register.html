@@ -1,0 +1,15 @@
+{% extends 'admintemp/index.html'%}
+{% load crispy_forms_tags %}
+{%  block content %}
+<div class="card">
+  <div class="card-body">
+    <h3 class="card-title">Worker Register Form</h3>
+    <form method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      {{login_form|crispy}}
+      {{worker_form|crispy}}
+      <button type="submit" class="btn btn-primary">submit</button>
+    </form>
+  </div>
+</div>
+{% endblock %}

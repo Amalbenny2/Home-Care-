@@ -1,0 +1,36 @@
+{% extends 'workertemp/Worker_home.html'%}
+{% load crispy_forms_tags %}
+{%  block content %}        <! block content used for >
+<div class="card" style="width: 50rem;">
+  <div class="card-body">
+    <h5 class="card-title"></h5>
+        <table class ='table'>
+            <thead>
+            <tr>
+                <th scope="col"></th>
+                <th>Start Time</th>
+                <th>End Time</th>
+                <th>Date</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for i in obj %}
+            <tr>
+                <th scope="row">{{forloop.counter}}</th>
+                <td>{{i.start_time}}</td>
+                <td>{{i.end_time}}</td>
+                <td>{{i.date}}</td>
+                <td><a href="{% url 'Worker_schedule_edit' i.id %}" class="btn btn-success" tabindex="-1" role="button" aria-disabled="true">Edit</a></td>
+                <td><a href="{% url 'Worker_schedule_delete' i.id %}" class="btn btn-danger" tabindex="-1" role="button" aria-disabled="true">Delete</a></td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+
+
+
+
+  </div>
+</div>
+{% endblock %}

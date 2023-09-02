@@ -1,0 +1,16 @@
+{% extends 'workertemp/Worker_home.html'%}
+{% load crispy_forms_tags %}
+{%  block content %}
+<div class="card" style="width: 40rem;">
+  <div class="card-body">
+    <h5 class="card-title">Worker Schedule</h5>
+    <form method="post">
+     {% csrf_token %}
+      {{form|crispy}}
+    <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+
+  </div>
+</div>
+{% endblock %}
