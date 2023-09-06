@@ -7,8 +7,8 @@
     <form method="post">
      {% csrf_token %}
       {{form|crispy}}
-<!--    <button type="submit" class="btn btn-primary">Submit</button>-->
-        <a href="{% url 'Worker_schedule_view'%}" class="btn btn-primary" tabindex="-1" role="button" aria-disabled="true">Submit</a></td>
+    <button type="submit" class="btn btn-primary">Submit</button>
+<!--        <a href="{% url 'Worker_schedule_view'%}" button type="submit" class="btn btn-primary" tabindex="-1" role="button" aria-disabled="true">Submit</a></td>-->
     </form>
 
 

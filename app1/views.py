@@ -1,5 +1,6 @@
 from django.contrib import messages
 from django.contrib.auth import authenticate,login
+from django.contrib.auth import logout
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.template import loader
@@ -240,9 +241,7 @@ def reject_appointment(request, id):
 
 def take_appointment(request,id):
     schedule = Worker_schedule.objects.get(id=id)
-    print(schedule)
     u = Customer.objects.get(user=request.user)
-    print(u)
     appointment = Appointment.objects.filter(user=u,Worker_schedule=schedule)
     print(appointment)
     if appointment.exists():
@@ -267,10 +266,8 @@ def view_appointment_user(request):
 
 
 
-def Complaint(request):
-    u = Customer.objects.get(user=request.user)
+def Complaint_send(request):
     form=ComplaintForm()
-
     if request.method == 'POST':
         form = ComplaintForm(request.POST)
         if form.is_valid():
@@ -278,8 +275,15 @@ def Complaint(request):
     return render(request,'Customertemp/Complaint.html',{'form':form})
 
 
-def complaint_view(request):
+def Complaint_view(request):
     obj=Complaint.objects.all()
-    return render(request,'Customertemp/omplaint_view.html',{'obj':obj})
+    print(obj)
+    return render(request,'admintemp/Complaint_view.html',{'obj':obj})
 
 
+
+
+
+# def logout_view(request):
+#     logout(request)
+#     redirect('#')

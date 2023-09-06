@@ -68,6 +68,7 @@ class Appointment(models.Model):
 # # Complaint models
 class Complaint(models.Model):
     customer = models.ForeignKey(Customer, on_delete=models.CASCADE)
+    worker=models.ForeignKey(Worker,on_delete=models.CASCADE)
     description = models.TextField()
     date = models.DateField()
     def __str__(self):

@@ -4,6 +4,7 @@ from django.urls import path
 urlpatterns=[
 
     path('login_view', views.login_view, name='login_view'),
+    # path('logout',views.logout,name='logout'),
 
     ##################################### ADMIN DASHBOARD ##############################################################
 
@@ -20,7 +21,7 @@ urlpatterns=[
     path('Customer_view', views.Customer_view, name='Customer_view'),
     path('Customer_edit_views/<int:id>/', views.Customer_edit_views, name='Customer_edit_views'),
     path('Customer_delete_views/<int:id>/', views.Customer_delete_views, name='Customer_delete_views'),
-    path('complaint_view',views.complaint_view,name='complaint_view'),
+    path('Complaint_view',views.Complaint_view,name='Complaint_view'),
 
 
     ################################# WORKER DASHBOARDS ENDS ###########################################################
@@ -45,7 +46,7 @@ urlpatterns=[
     path('Customer_schedule_view',views.Customer_schedule_view,name='Customer_schedule_view'),
     path('take_appointment/<int:id>/',views.take_appointment,name='take_appointment'),
     path('view_appointment_user',views.view_appointment_user,name='view_appointment_user'),
-    path('Complaint',views.Complaint,name='Complaint'),
+    path('Complaint_send',views.Complaint_send,name='Complaint_send'),
 
 
 ]
