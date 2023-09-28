@@ -5,11 +5,17 @@ from app1.models import Worker,Customer,Worker_schedule,Appointment,Complaint
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 
+# THIS IS A SERVICE FORM USED BY THE ADMIN TO REPRESENT SERVICES
 
 class ServiceForm(forms.ModelForm):
     class Meta:
         model=Services
         fields=('name',)
+
+
+
+# THIS FORM IS A WORKER  FORM USED TO  GIVE THE WORKER DETAILS
+
 class WorkerForm(forms.ModelForm):
      class Meta:
         model = Worker
@@ -22,6 +28,9 @@ class TimeInput(forms.TimeInput):
 
 class DateInput(forms.DateInput):
     input_type='Date'
+
+# THIS FORM IS USED TO  REPRESENT THE WORKER SCHEDULE
+
 class Worker_scheduleForm(forms.ModelForm):
     date=forms.DateField(widget=DateInput)
     start_time=forms.TimeField(widget=TimeInput,)
@@ -33,11 +42,19 @@ class Worker_scheduleForm(forms.ModelForm):
 
 
 
+
+# THIS FORM IS LOGIN FORM USED FOR LOGIN PAGES
+
 class LoginForm(UserCreationForm):
     class Meta:
         model = Login
         fields = ('username','password1','password2')
 
+
+
+
+
+# THIS FORM IS A CUSTOMER  FORM USED TO  GIVE THE CUSTOMER DETAILS
 
 class CustomerForm(forms.ModelForm):
     class Meta:
@@ -46,6 +63,10 @@ class CustomerForm(forms.ModelForm):
 
 
 
+
+
+# THIS FORM IS APPOINTMENT FORM USED BY WORKER TO TAKE APPOINTMENT OF CUSTOMER
+
 class AppointmentForm(forms.ModelForm):
     class Meta:
         model =Appointment
@@ -53,17 +74,16 @@ class AppointmentForm(forms.ModelForm):
         exclude =("status","user",'user1')
 
 
-class DateInput(forms.DateInput):
-    input_type='Date'
+
+
+
+#### FORM IS  USED FOR COMPAAINTING AND SEND REPLY
+
 class ComplaintForm(forms.ModelForm):
-    date = forms.DateField(widget=DateInput)
+
     class Meta:
         model = Complaint
-        fields = '__all__'
-
-
-
-
+        fields = ("description",)
 
 
 

@@ -1,0 +1,46 @@
+{% extends 'admintemp/index.html' %}
+
+{% block content %}
+
+<div class="col-lg-8 col-ml-8">
+    <div class="row">
+        <!-- basic form start -->
+        <div class="col-12 mt-5">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="header-title">Reply</h4>
+                    <form method="post" enctype="multipart/form-data">{% csrf_token %}
+
+                        <div class="form-group">
+                            <label class="form-control-label">Date</label>
+                            <input required class="form-control"readonly value="{{complaint.date}}">
+                        </div>
+
+                         <div class="form-group">
+                            <label class="form-control-label">Complaint</label>
+                            <input required class="form-control"readonly value="{{complaint.description}}">
+                        </div>
+
+                         <div class="form-group">
+                            <label class="form-control-label">Reply</label>
+                            <textarea cols="5"rows="7" required id="company" class="form-control"name="reply">
+                            </textarea>
+                        </div>
+
+
+                        <button type="submit" class="btn btn-primary mt-4 pr-4 pl-4">Submit</button>
+                    </form>
+
+                    {% for message in messages %}
+                    <div class="alert alert-info" role="alert">
+                        <strong>{{message}}</strong>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+{% endblock %}%}

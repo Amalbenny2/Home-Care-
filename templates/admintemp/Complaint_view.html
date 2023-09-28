@@ -9,9 +9,10 @@
             <tr>
                 <th scope="col"></th>
                 <th>Customer</th>
-                <th>Worker</th>
+<!--                <th>Worker</th>-->
                 <th>Description</th>
                 <th>Date</th>
+                <th>Status</th>
 <!--                <th>IMAGE</th>-->
 
 
@@ -21,16 +22,23 @@
             {% for i in obj %}
             <tr>
                 <th scope="row">{{forloop.counter}}</th>
-                <td>{{i.customer}}</td>
-                <td>{{i.worker}}</td>
+                <td>{{i.user}}</td>
+<!--                <td>{{i.worker}}</td>-->
                 <td>{{i.description}}</td>
                 <td>{{i.date}}</td>
+                <td>
+                      {% if i.reply == None %}
+                      <a href="{% url 'reply' i.id %}" class="btn btn-danger" tabindex="-1" role="button" aria-disabled="true">No Reply</a>
+                      {% else %}
+                      <a href="{% url 'reply' i.id %}" class="btn btn-success" tabindex="-1" role="button" aria-disabled="true">reply</a>
+                      {% endif %}
+                </td>
+                <td><a href="{% url 'Complaint_delete' i.id %}" class="btn btn-danger" tabindex="-1" role="button" aria-disabled="true">Delete</a></td>
 
 
-            </tr>
             {% endfor %}
-            </tbody>
-        </table>
-        </div>
+          </tbody>
+       </table>
+       </div>
 </div>
 {% endblock %}

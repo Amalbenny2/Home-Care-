@@ -67,12 +67,11 @@ class Appointment(models.Model):
 # #
 # # Complaint models
 class Complaint(models.Model):
-    customer = models.ForeignKey(Customer, on_delete=models.CASCADE)
-    worker=models.ForeignKey(Worker,on_delete=models.CASCADE)
+    user = models.ForeignKey(Login, on_delete=models.CASCADE,)
     description = models.TextField()
-    date = models.DateField()
-    def __str__(self):
-        return self.description
+    date = models.DateField(auto_now=True)
+    reply=models.CharField(max_length=200,null=True,blank=True)
+
 #
 #
 # # view rating

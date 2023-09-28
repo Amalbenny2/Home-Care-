@@ -226,15 +226,11 @@
                   </a>
                 </li>
                 <li class="menu-item">
-                  <a href="Replay" class="menu-link" target="_blank">
-                    <div data-i18n="Basic">Replay</div>
+                  <a href="reply" class="menu-link" target="_blank">
+                    <div data-i18n="Basic">Reply</div>
                   </a>
                 </li>
-<!--                <li class="menu-item">-->
-<!--                  <a href="auth-forgot-password-basic.html" class="menu-link" target="_blank">-->
-<!--                    <div data-i18n="Basic">Forgot Password</div>-->
-<!--                  </a>-->
-<!--                </li>-->
+<!--
               </ul>
             </li>
 <!--            <li class="menu-item">-->
@@ -255,13 +251,7 @@
 <!--                </li>-->
               </ul>
             </li>
-            <!-- Components -->
-<!--            <li class="menu-header small text-uppercase"><span class="menu-header-text">Components</span></li>-->
-            <!-- Cards -->
-<!--            <li class="menu-item">-->
-<!--              <a href="cards-basic.html" class="menu-link">-->
-<!--                <i class="menu-icon tf-icons bx bx-collection"></i>-->
-<!--                <div data-i18n="Basic">Cards</div>-->
+
 <!--              </a>-->
 <!--            </li>-->
             <!-- User interface -->
@@ -406,10 +396,8 @@
 <!--              </a>-->
 <!--              <ul class="menu-sub">-->
 <!--                <li class="menu-item">-->
-<!--                  <a href="forms-basic-inputs.html" class="menu-link">-->
-<!--                    <div data-i18n="Basic Inputs">Basic Inputs</div>-->
-<!--                  </a>-->
-<!--                </li>-->
+<!--
+
 <!--                <li class="menu-item">-->
 <!--                  <a href="forms-input-groups.html" class="menu-link">-->
 <!--                    <div data-i18n="Input groups">Input groups</div>-->
@@ -436,13 +424,8 @@
 <!--              </ul>-->
 <!--            </li>-->
             <!-- Tables -->
-<!--            <li class="menu-item">-->
-<!--              <a href="tables-basic.html" class="menu-link">-->
-<!--                <i class="menu-icon tf-icons bx bx-table"></i>-->
-<!--                <div data-i18n="Tables">Tables</div>-->
-<!--              </a>-->
-<!--            </li>-->
-            <!-- Misc -->
+<!--
+            
 <!--            <li class="menu-header small text-uppercase"><span class="menu-header-text">Misc</span></li>-->
 <!--&lt;!&ndash;            <li class="menu-item">&ndash;&gt;-->
 <!--              <a-->
@@ -561,12 +544,12 @@
                     <li>
                       <div class="dropdown-divider"></div>
                     </li>
-<!--                    <li>-->
-<!--                      <a class="dropdown-item" href="auth-login-basic.html">-->
-<!--                        <i class="bx bx-power-off me-2"></i>-->
-<!--                        <span class="align-middle">Log Out</span>-->
-<!--                      </a>-->
-<!--                    </li>-->
+                      <li>
+                      <a class="dropdown-item" href="{% url 'logout_view' %}">
+                      <i class="bx bx-power-off me-2"></i>-->
+                      <span class="align-middle">Log Out</span>
+                      </a>
+                </li>
                   </ul>
                 </li>
                 <!--/ User -->
